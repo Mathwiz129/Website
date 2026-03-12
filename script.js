@@ -158,8 +158,7 @@ async function loadHistory() {
         
         // Replay historical minutes
         for (const row of data) {
-            // SQLite CURRENT_TIMESTAMP uses UTC, so append "Z"
-            const time = new Date(row.timestamp + "Z");
+            const time = new Date(row.timestamp);
             processMinuteData(time, row.price);
         }
         
