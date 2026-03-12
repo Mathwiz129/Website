@@ -1,0 +1,66 @@
+body {
+    font-family: Arial;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.price-box {
+    font-size: 60px;
+    margin: 20px;
+}
+
+.update {
+    font-size: 16px;
+    color: #aaa;
+}
+
+.clock {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+#minuteList {
+    list-style: none;
+    max-width: 400px;
+    margin: auto;
+    padding: 0;
+}
+
+#minuteList li {
+    padding: 6px;
+    border-bottom: 1px solid #444;
+}
+
+table {
+    margin: auto;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #444;
+    padding: 8px;
+}
+
+.minute-box {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin: 2px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.green {
+    background: #2ecc71;
+}
+
+.red {
+    background: #e74c3c;
+}
+
+.blue {
+    background: #3498db;
+}

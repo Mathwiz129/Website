@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Website</title>
+    <meta charset="UTF-8">
+    <title>Bitcoin Tracker</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>This is a test push</h1>
+
+    <h1>Bitcoin Price Tracker</h1>
+
+    <div class="price-box">
+        <div id="price">$---</div>
+        <div class="update">Updated: <span id="lastUpdate">--</span></div>
+    </div>
+
+    <div class="clock">
+        <h3 id="clock"></h3>
+    </div>
+
+    <h3>Minute Prices</h3>
+    <ul id="minuteList"></ul>
+
+    <h2>Interval Analysis</h2>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Start Time</th>
+                <th>Start Price</th>
+                <th>Minutes</th>
+                <th>End Price</th>
+                <th>Result</th>
+                <th>Repeat</th>
+            </tr>
+        </thead>
+
+        <tbody id="intervalBody"></tbody>
+
+    </table>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
