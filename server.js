@@ -23,16 +23,16 @@ if (!fs.existsSync(dataFile)) {
 
 let latestPrice = null;
 
-// Function to fetch price from CoinGecko
+// Function to fetch price from Coinbase
 async function fetchBitcoinPrice() {
     try {
-        const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd");
+        const response = await fetch("https://api.coinbase.com/v2/prices/BTC-USD/spot");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const data = await response.json();
-        latestPrice = data.bitcoin.usd;
+        latestPrice = parseFloat(data.data.amount);
         
         const timestamp = new Date().toISOString();
         const newEntry = { timestamp, price: latestPrice };
@@ -49,7 +49,7 @@ async function fetchBitcoinPrice() {
         
         console.log(`[${new Date().toLocaleTimeString()}] Saved price: $${latestPrice.toLocaleString()}`);
     } catch (e) {
-        console.error("Error fetching price from CoinGecko:", e.message);
+        console.error("Error fetching price from Coinbase:", e.message);
     }
 }
 
